@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Westerfield WiFi Auto-Login",
+  "version": "1.0.0",
+  "description": "Automatically logs in to Westerfield College WiFi portal when connected",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://portal.modieltswesterfield.com/*",
+    "https://portal.modieltswesterfield.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://portal.modieltswesterfield.com/*",
+        "https://portal.modieltswesterfield.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options.html"
+}
+
+
+
