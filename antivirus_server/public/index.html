@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antivirus Server UI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Antivirus Server</div>
+    <div class="status">
+      <span id="serverPort"></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Authentication</h2>
+      <div class="row">
+        <input id="token" type="password" placeholder="x-auth-token" autocomplete="off">
+        <button id="saveToken">Save Token</button>
+        <button id="clearToken">Clear</button>
+      </div>
+      <div class="hint">Token is stored in your browser locally.</div>
+    </section>
+
+    <section class="card">
+      <h2>Health</h2>
+      <div class="row">
+        <button id="btnHealth">Check Health</button>
+        <button id="btnStatus">Defender Status</button>
+        <button id="btnUpdate">Update Signatures</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Scans</h2>
+      <div class="row">
+        <button id="btnQuick">Quick Scan</button>
+        <button id="btnFull">Full Scan</button>
+      </div>
+      <div class="row">
+        <input id="customPaths" type="text" placeholder="Custom paths (comma separated, e.g. C:\\, D:\\Downloads)">
+        <button id="btnCustom">Custom Scan</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Live Scan & Progress</h2>
+      <div class="row">
+        <input id="trackPaths" type="text" placeholder="Paths to scan (comma separated, e.g. C:\\, D:\\Downloads)">
+        <button id="btnTrackStart">Start Live Scan</button>
+        <button id="btnTrackCancel" class="danger">Cancel</button>
+      </div>
+      <div class="row"><span id="scanStatus" style="font-weight:bold;color:#22c55e;"></span></div>
+      <div class="row">
+        <div class="progress" style="flex:1">
+          <div id="scanBar" class="bar" style="width:0%"></div>
+        </div>
+        <div id="scanPercent" style="min-width:60px;text-align:right;">0%</div>
+      </div>
+      <div class="row" id="scanCounts">0 / 0 files</div>
+      <div class="row" style="justify-content:space-between;align-items:center;">
+        <div class="hint">Scanned files (live)</div>
+        <div>
+          <button id="btnClearScanned">Clear List</button>
+          <button id="btnDownloadScanned">Download List</button>
+        </div>
+      </div>
+      <div id="scannedList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Threats</h2>
+      <div class="row">
+        <button id="btnThreats">List Threats</button>
+        <button id="btnRemoveAll" class="danger">Remove All</button>
+        <button id="btnRemoveSelected" class="danger">Remove Selected</button>
+      </div>
+      <div id="threatList" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Output</h2>
+      <pre id="output" class="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Debug</h2>
+      <div class="row">
+        <label class="chk"><input type="checkbox" id="debugToggle"> <span class="name">Enable Debug Logs</span></label>
+        <button id="btnClearDebug">Clear Debug</button>
+      </div>
+      <pre id="debugLog" class="output" style="min-height:120px"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
