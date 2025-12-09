@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="demo">question 2
+
+</p>
+<script>
+    document.write("question 1"+"<br>");
+    let pa=["january","february","march","april","may","june","july","august","september","october","november","december"];
+    let yu=pa.length
+    document.write(yu+"<br>");
+
+    //question 2
+    let nh=pa.slice(6,7);
+document.getElementById("demo").innerHTML = pa.slice(6,7); 
+    //document.write(nh.slice(6,7)+"<br>");
+
+    //question 3
+    document.write("<br>"+"question 3"+"<br>");
+    document.write("the month of the year are: "+ pa+"<br>");
+
+    //question 4
+    document.write("<br>"+"question 4"+"<br>");
+    let y = 1
+    let by="<ol>"
+    for(let i=0;i<pa.length;i++){
+        by += "<li>" + pa[i] +"="+i+ "</li>";
+    }
+    document.write(by);
+
+    ///question 5
+    document.write("<br>"+"question 5"+"<br>");
+    let ya = "<ol>"
+ for(let i=0;i<pa.length;i++){
+        ya += "<li>"+ pa[i] +"="+i*2+ "</li>";
+    }   
+    document.write(ya);
+
+    //question 6
+    document.write("<br>"+"question 6"+"<br>");
+    let re = "<ol>"
+        let nu="YEAR 2026= "
+    for(let i=0;i<pa.length;i++){
+        
+        re += "<li>" + nu.concat(pa[i])+ "</li>";
+    }
+    document.write(re);
+
+</script>
+<body>
+    
+</body>
+</html>
