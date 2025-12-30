@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="demo"></p>
+<p id="demo1"></p>
+<body>
+    <script>
+        let text=[10,30,40,100]
+        let ya=1
+        let ko=0
+        for(let o=0; o<text.length; o++){
+            ya *= text[o];
+            
+        }
+        for(let o=0; o<text.length; o++){
+            ko +=text[o];
+        }
+    document.getElementById("demo").innerHTML="my answer is: " + ya;
+    document.getElementById("demo1").innerHTML="the sum is: " + ko;
+
+    </script>
+</body>
+</html>
